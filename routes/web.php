@@ -21,6 +21,7 @@ Route::redirect('/home', '/dashboard')->name('home');
 Route::group(['middleware' => 'auth'], function(){
     Route::get('dashboard', 'DashboardController')->name('dashboard');
     Route::view('widget', 'widget', ['title' => __('Widgets')])->name('widget');
+    Route::view('profile', 'profile', ['title' => __('Profile')])->name('profile');
 
     Route::group(['prefix' => 'charts', 'as' => 'charts.'], function(){
         Route::view('chartjs', 'charts.chartjs', ['title' => 'ChartJS'])->name('chartjs');

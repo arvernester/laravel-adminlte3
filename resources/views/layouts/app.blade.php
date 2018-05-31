@@ -174,7 +174,7 @@
               alt="{{ optional(auth()->user())->name }}">
           </div>
           <div class="info">
-            <a href="#" class="d-block">
+            <a href="{{ route('profile') }}" class="d-block">
               {{ optional(auth()->user())->name ?? __('Guest') }}
             </a>
           </div>
