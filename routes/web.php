@@ -11,13 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::redirect('/', '/dashboard');
 
 Auth::routes();
+Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::redirect('/home', '/dashboard')->name('home');
 
 Route::get('dashboard', 'DashboardController')->name('dashboard');
 

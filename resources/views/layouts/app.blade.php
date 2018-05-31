@@ -245,7 +245,9 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">{{ __('Dashboard') }}</a></li>
-              <li class="breadcrumb-item active">{{ $title }}</li>
+              @if (! empty($title))
+                <li class="breadcrumb-item active">{{ $title }}</li>
+              @endif
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
