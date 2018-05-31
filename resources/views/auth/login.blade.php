@@ -22,12 +22,12 @@
         @csrf
 
         <div class="form-group has-feedback">
-          <input name="email" type="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" placeholder="Email" autofocus>
+          <input name="email" type="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" value="{{ old('email') }}" placeholder="{{ __('Email') }}" autofocus>
           <div class="invalid-feedback">{{ $errors->first('email') }}</div>
         </div>
 
         <div class="form-group has-feedback">
-          <input name="password" type="password" class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}" placeholder="Password">
+          <input name="password" type="password" class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}" placeholder="{{ __('Password') }}">
           <div class="invalid-feedback">{{ $errors->first('password') }}</div>
         </div>
         <div class="row">

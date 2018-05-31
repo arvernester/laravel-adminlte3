@@ -23,12 +23,12 @@
         @csrf
 
         <div class="form-group has-feedback">
-          <input name="name" type="text" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" placeholder="{{ __('Full name') }}" autofocus>
+          <input name="name" type="text" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" value="{{ old('name') }}" placeholder="{{ __('Full name') }}" autofocus>
           <div class="invalid-feedback">{{ $errors->first('name') }}</div>
         </div>
 
         <div class="form-group has-feedback">
-          <input name="email" type="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" placeholder="{{ __('Email') }}">
+          <input name="email" type="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" value="{{ old('email') }}" placeholder="{{ __('Email') }}">
           <div class="invalid-feedback">{{ $errors->first('email') }}</div>
         </div>
 
