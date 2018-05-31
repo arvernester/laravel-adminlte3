@@ -52,10 +52,10 @@
 
       <div class="social-auth-links text-center mb-3">
         <p>- {{ __('OR') }} -</p>
-        <a href="#" class="btn btn-block btn-primary">
+        <a href="#" class="btn btn-block btn-primary {{ !config('services.facebook.client_id') ? 'disabled' : '' }}">
           <i class="fa fa-facebook mr-2"></i> {{ __('Log in using Facebook') }}
         </a>
-        <a href="#" class="btn btn-block btn-danger">
+        <a href="#" class="btn btn-block btn-danger {{ !config('services.google.client_id') ? 'disabled' : '' }}"">
           <i class="fa fa-google-plus mr-2"></i> {{ __('Log in using Google+') }}
         </a>
       </div>
