@@ -317,21 +317,60 @@
             <li class="nav-item">
               <a href="{{ route('examples.calendar') }}" class="nav-link {{ request()->routeIs('examples.calendar') ? 'active' : '' }}">
                 <i class="nav-icon fa fa-calendar"></i>
-                <p>{{ __('Calendar') }} <span class="badge badge-info right">2</span></p>
-                
+                <p>{{ __('Calendar') }} <span class="badge badge-info right">2</span></p>                
               </a>
             </li>
-            <li class="nav-item">
-              <a href="{{ route('examples.blank') }}" class="nav-link {{ request()->routeIs('examples.blank') ? 'active' : '' }}">
-                <i class="nav-icon fa fa-circle-o nav-icon"></i>
-                <p>{{ __('Blank Page') }}</p>
+            <li class="nav-item has-treeview {{ request()->routeIs('pages.*') ? 'menu-open' : '' }}">
+              <a href="#" class="nav-link {{ request()->routeIs('pages.*') ? 'active' : '' }}">
+                <i class="nav-icon fa fa-book"></i>
+                <p>
+                  {{ __('Pages') }}
+                  <i class="right fa fa-angle-left"></i>
+                </p>
               </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{ route('pages.invoice') }}" class="nav-link {{ request()->routeIs('pages.invoice') ? 'active' : '' }}">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>{{ __('Invoice') }}</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ route('profile') }}" class="nav-link {{ request()->routeIs('profile') ? 'active' : '' }}">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>{{ __('Profile') }}</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ route('pages.lockscreen') }}" class="nav-link {{ request()->routeIs('pages.lockscreen') ? 'active' : '' }}">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>{{ __('Lockscreen') }}</p>
+                  </a>
+                </li>
+              </ul>
             </li>
-            <li class="nav-item">
-              <a href="{{ route('examples.starter') }}" class="nav-link {{ request()->routeIs('examples.starter') ? 'active' : '' }}">
-                <i class="nav-icon fa fa-circle-o nav-icon"></i>
-                <p>{{ __('Starter Page') }}</p>
+            <li class="nav-item has-treeview {{ request()->routeIs('examples.*') ? 'menu-open' : '' }}">
+              <a href="#" class="nav-link {{ request()->routeIs('examples.*') ? 'active' : '' }}">
+                <i class="nav-icon fa fa-plus-square-o"></i>
+                <p>
+                  {{ __('Extras') }}
+                  <i class="right fa fa-angle-left"></i>
+                </p>
               </a>
+              <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{ route('examples.blank') }}" class="nav-link {{ request()->routeIs('examples.blank') ? 'active' : '' }}">
+                      <i class="nav-icon fa fa-circle-o nav-icon"></i>
+                      <p>{{ __('Blank Page') }}</p>
+                    </a>
+                  </li>            
+                  <li class="nav-item">
+                    <a href="{{ route('examples.starter') }}" class="nav-link {{ request()->routeIs('examples.starter') ? 'active' : '' }}">
+                      <i class="nav-icon fa fa-circle-o nav-icon"></i>
+                      <p>{{ __('Starter Page') }}</p>
+                    </a>
+                  </li>
+              </ul>
             </li>
 
             <li class="nav-item">

@@ -53,4 +53,10 @@ Route::group(['middleware' => 'auth'], function(){
 
         Route::view('calendar', 'examples.calendar', ['title' => __('Calendar')])->name('calendar');
     });
+
+    Route::group(['prefix' => 'pages', 'as' => 'pages.'], function(){
+        Route::view('invoice', 'pages.invoice', ['title' => __('Invoice')])->name('invoice');
+        Route::view('invoice-print', 'pages.invoice-print', ['title' => __('Invoice Print')])->name('invoice.print');
+        Route::view('lockscreen', 'pages.lockscreen', ['title' => __('Lockscreen')])->name('lockscreen');
+    });
 });
