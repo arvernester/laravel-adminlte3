@@ -315,6 +315,13 @@
             <li class="nav-header">{{ __('EXAMPLES') }}</li>
 
             <li class="nav-item">
+              <a href="{{ route('examples.calendar') }}" class="nav-link {{ request()->routeIs('examples.calendar') ? 'active' : '' }}">
+                <i class="nav-icon fa fa-calendar"></i>
+                <p>{{ __('Calendar') }} <span class="badge badge-info right">2</span></p>
+                
+              </a>
+            </li>
+            <li class="nav-item">
               <a href="{{ route('examples.blank') }}" class="nav-link {{ request()->routeIs('examples.blank') ? 'active' : '' }}">
                 <i class="nav-icon fa fa-circle-o nav-icon"></i>
                 <p>{{ __('Blank Page') }}</p>
@@ -326,7 +333,6 @@
                 <p>{{ __('Starter Page') }}</p>
               </a>
             </li>
-
 
             <li class="nav-item">
               <a href="{{ route('logout') }}" class="nav-link">
@@ -396,7 +402,7 @@
         {{ config('app.name') }}
       </div>
       <!-- Default to the left -->
-      <strong>Copyright &copy; 2014-2018
+      <strong>{{ __('Copyright') }} &copy; 2014-2018
         <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
     </footer>
   </div>
@@ -404,10 +410,16 @@
 
   <!-- jQuery -->
   <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
+
   <!-- Bootstrap 4 -->
   <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
   <!-- AdminLTE App -->
   <script src="{{ asset('js/adminlte.min.js') }}"></script>
+
+  <script src="{{ asset('plugins/slimScroll/jquery.slimscroll.min.js') }}"></script>
+  <script src="{{ asset('plugins/fastclick/fastclick.js') }}"></script>
+  <script src="{{ asset('js/demo.js') }}"></script>
 
   @stack('js')
 </body>

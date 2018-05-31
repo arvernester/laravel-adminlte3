@@ -50,5 +50,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::group(['prefix' => 'examples', 'as' => 'examples.'], function(){
         Route::view('blank', 'examples.blank', ['title' => __('Blank Page')])->name('blank');
         Route::view('starter', 'examples.starter', ['title' => __('Starter Page')])->name('starter');
+
+        Route::view('calendar', 'examples.calendar', ['title' => __('Calendar')])->name('calendar');
     });
 });
