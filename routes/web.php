@@ -34,4 +34,10 @@ Route::group(['middleware' => 'auth'], function(){
         Route::view('icon', 'ui.icon', ['title' => __('Icons')])->name('icon');
         Route::view('slider', 'ui.slider', ['title' => __('Sliders')])->name('slider');
     });
+
+    Route::group(['prefix' => 'forms', 'as' => 'forms.'], function(){
+        Route::view('general', 'forms.general', ['title' => __('General')])->name('general');
+        Route::view('advanced', 'forms.advanced', ['title' => __('Advanced')])->name('advanced');
+        Route::view('editor', 'forms.editor', ['title' => __('Editor')])->name('editor');
+    });
 });

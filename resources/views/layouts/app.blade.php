@@ -259,6 +259,35 @@
                 </li>
               </ul>
             </li>
+            <li class="nav-item has-treeview {{ request()->routeIs('forms.*') ? 'menu-open' : '' }}">
+              <a href="#" class="nav-link {{ request()->routeIs('forms.*') ? 'active' : '' }}">
+                <i class="nav-icon fa fa-edit"></i>
+                <p>
+                  {{ __('Forms') }}
+                  <i class="right fa fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{ route('forms.general') }}" class="nav-link {{ request()->routeIs('forms.general') ? 'active' : '' }}">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>{{ __('General') }}</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ route('forms.advanced') }}" class="nav-link {{ request()->routeIs('forms.advanced') ? 'active' : '' }}">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>{{ __('Advanced') }}</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ route('forms.editor') }}" class="nav-link {{ request()->routeIs('forms.editor') ? 'active' : '' }}">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>{{ __('Editor') }}</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
           </ul>
         </nav>
         <!-- /.sidebar-menu -->
