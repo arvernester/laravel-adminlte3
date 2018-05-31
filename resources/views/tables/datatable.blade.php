@@ -893,8 +893,6 @@
 @push('js')
 <script src="{{ asset('plugins/datatables/jquery.dataTables.js') }}"></script>
 <script src="{{ asset('plugins/datatables/dataTables.bootstrap4.js') }}"></script>
-<script src="{{ asset('plugins/slimScroll/jquery.slimscroll.min.js') }}"></script>
-<script src="{{ asset('plugins/fastclick/fastclick.js') }}"></script>
 <script>
     $(function() {
       $("#example1").DataTable();

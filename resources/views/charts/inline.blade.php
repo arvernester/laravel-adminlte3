@@ -393,8 +393,6 @@
 @endsection
 
 @push('js')
-<script src="{{ asset('plugins/slimScroll/jquery.slimscroll.min.js') }}"></script>
-<script src="{{ asset('plugins/fastclick/fastclick.js') }}"></script>
 <script src="{{ asset('plugins/knob/jquery.knob.js') }}"></script>
 <script src="{{ asset('plugins/sparkline/jquery.sparkline.min.js') }}"></script>
 

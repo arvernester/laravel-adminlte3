@@ -120,7 +120,6 @@
 <link rel="stylesheet" href="{{ asset('plugins/ionslider/ion.rangeSlider.css') }}">
 <link rel="stylesheet" href="{{ asset('plugins/ionslider/ion.rangeSlider.skinNice.css') }}">
 <link rel="stylesheet" href="{{ asset('plugins/bootstrap-slider/slider.css') }}"> @endpush @push('js')
-<script src="{{ asset('plugins/fastclick/fastclick.js') }}"></script>
 <script src="{{ asset('plugins/ionslider/ion.rangeSlider.min.js') }}"></script>
 <script src="{{ asset('plugins/bootstrap-slider/bootstrap-slider.js') }}"></script>
 

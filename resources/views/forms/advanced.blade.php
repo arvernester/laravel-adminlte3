@@ -398,9 +398,7 @@
 <script src="{{ asset('plugins/daterangepicker/daterangepicker.js') }}"></script>
 <script src="{{ asset('plugins/colorpicker/bootstrap-colorpicker.min.js') }}"></script>
 <script src="{{ asset('plugins/timepicker/bootstrap-timepicker.min.js') }}"></script>
-<script src="{{ asset('plugins/slimScroll/jquery.slimscroll.min.js') }}"></script>
 <script src="{{ asset('plugins/iCheck/icheck.min.js') }}"></script>
-<script src="{{ asset('plugins/fastclick/fastclick.js') }}"></script>
 <script>
     $(function() {
       //Initialize Select2 Elements
