@@ -224,47 +224,35 @@
                 </li>
               </ul>
             </li>
-            <li class="nav-item has-treeview {{ request()->routeIs('pages.*') ? 'menu-open' : '' }}">
-              <a href="#" class="nav-link {{ request()->routeIs('pages.*') ? 'active' : '' }}">
-                <i class="nav-icon fa fa-th"></i>
+            <li class="nav-item has-treeview {{ request()->routeIs('ui.*') ? 'menu-open' : '' }}">
+              <a href="#" class="nav-link {{ request()->routeIs('ui.*') ? 'active' : '' }}">
+                <i class="nav-icon fa fa-tree"></i>
                 <p>
-                  {{ __('Sample Pages') }}
+                  {{ __('UI Elements') }}
                   <i class="right fa fa-angle-left"></i>
                 </p>
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="{{ route('pages.general') }}" class="nav-link {{ request()->routeIs('pages.general') ? 'active' : '' }}">
+                  <a href="{{ route('ui.general') }}" class="nav-link {{ request()->routeIs('ui.general') ? 'active' : '' }}">
                     <i class="fa fa-circle-o nav-icon"></i>
                     <p>{{ __('General') }}</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="{{ route('pages.button') }}" class="nav-link {{ request()->routeIs('pages.button') ? 'active' : '' }}">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>{{ __('Buttons') }}</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="{{ route('pages.table') }}" class="nav-link {{ request()->routeIs('pages.table') ? 'active' : '' }}">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>{{ __('Tables') }}</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="{{ route('pages.form') }}" class="nav-link {{ request()->routeIs('pages.form') ? 'active' : '' }}">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>{{ __('Forms') }}</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="{{ route('pages.icon') }}" class="nav-link {{ request()->routeIs('pages.icon') ? 'active' : '' }}">
+                  <a href="{{ route('ui.icon') }}" class="nav-link {{ request()->routeIs('ui.icon') ? 'active' : '' }}">
                     <i class="fa fa-circle-o nav-icon"></i>
                     <p>{{ __('Icons') }}</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="{{ route('pages.slider') }}" class="nav-link {{ request()->routeIs('pages.slider') ? 'active' : '' }}">
+                  <a href="{{ route('ui.button') }}" class="nav-link {{ request()->routeIs('ui.button') ? 'active' : '' }}">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>{{ __('Buttons') }}</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ route('ui.slider') }}" class="nav-link {{ request()->routeIs('ui.slider') ? 'active' : '' }}">
                     <i class="fa fa-circle-o nav-icon"></i>
                     <p>{{ __('Sliders') }}</p>
                   </a>
