@@ -36,6 +36,8 @@
 <!-- Bootstrap 4 -->
 <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
+<script src="{{ asset('plugins/slimScroll/jquery.slimscroll.min.js') }}"></script>
+
 <!-- iCheck -->
 <script src="{{ asset('plugins/iCheck/icheck.min.js') }}"></script>
 <script>
