@@ -16,7 +16,11 @@
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
-      <p class="login-box-msg">{{ __('Sign in to start your session') }}</p>
+      <div class="alert alert-info">
+        {{ __('Please register or login to access dashboard page.') }}
+      </div>
+
+      <p class="login-box-msg">{{ __('Log in to start your session') }}</p>
 
       <form action="{{ route('login') }}" method="post">
         @csrf
@@ -40,7 +44,7 @@
           </div>
           <!-- /.col -->
           <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block btn-flat">{{ __('Sign In') }}</button>
+            <button type="submit" class="btn btn-primary btn-block btn-flat">{{ __('Log In') }}</button>
           </div>
           <!-- /.col -->
         </div>
@@ -49,10 +53,10 @@
       <div class="social-auth-links text-center mb-3">
         <p>- {{ __('OR') }} -</p>
         <a href="#" class="btn btn-block btn-primary">
-          <i class="fa fa-facebook mr-2"></i> {{ __('Sign in using Facebook') }}
+          <i class="fa fa-facebook mr-2"></i> {{ __('Log in using Facebook') }}
         </a>
         <a href="#" class="btn btn-block btn-danger">
-          <i class="fa fa-google-plus mr-2"></i> {{ __('Sign in using Google+') }}
+          <i class="fa fa-google-plus mr-2"></i> {{ __('Log in using Google+') }}
         </a>
       </div>
       <!-- /.social-auth-links -->
