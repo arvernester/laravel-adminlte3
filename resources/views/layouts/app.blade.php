@@ -315,7 +315,7 @@
             <li class="nav-header">{{ __('EXAMPLES') }}</li>
 
             <li class="nav-item">
-              <a href="{{ route('examples.calendar') }}" class="nav-link {{ request()->routeIs('examples.calendar') ? 'active' : '' }}">
+              <a href="{{ route('calendar') }}" class="nav-link {{ request()->routeIs('calendar') ? 'active' : '' }}">
                 <i class="nav-icon fa fa-calendar"></i>
                 <p>{{ __('Calendar') }} <span class="badge badge-info right">2</span></p>                
               </a>
