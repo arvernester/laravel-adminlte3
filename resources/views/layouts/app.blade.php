@@ -288,6 +288,29 @@
                 </li>
               </ul>
             </li>
+            <li class="nav-item has-treeview {{ request()->routeIs('tables.*') ? 'menu-open' : '' }}">
+              <a href="#" class="nav-link {{ request()->routeIs('tables.*') ? 'active' : '' }}">
+                <i class="nav-icon fa fa-table"></i>
+                <p>
+                  {{ __('Tables') }}
+                  <i class="right fa fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{ route('tables.simple') }}" class="nav-link {{ request()->routeIs('tables.simple') ? 'active' : '' }}">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>{{ __('Simple Tables') }}</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ route('tables.datatable') }}" class="nav-link {{ request()->routeIs('tables.datatable') ? 'active' : '' }}">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>{{ __('Data Tables') }}</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
           </ul>
         </nav>
         <!-- /.sidebar-menu -->

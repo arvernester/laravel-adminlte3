@@ -40,4 +40,9 @@ Route::group(['middleware' => 'auth'], function(){
         Route::view('advanced', 'forms.advanced', ['title' => __('Advanced')])->name('advanced');
         Route::view('editor', 'forms.editor', ['title' => __('Editor')])->name('editor');
     });
+
+    Route::group(['prefix' => 'tables', 'as' => 'tables.'], function(){
+        Route::view('simple', 'tables.simple', ['title' => __('Simple Tables')])->name('simple');
+        Route::view('datatable', 'tables.datatable', ['title' => __('Data Tables')])->name('datatable');
+    });
 });
