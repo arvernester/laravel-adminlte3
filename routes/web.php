@@ -46,4 +46,9 @@ Route::group(['middleware' => 'auth'], function(){
         Route::view('simple', 'tables.simple', ['title' => __('Simple Tables')])->name('simple');
         Route::view('datatable', 'tables.datatable', ['title' => __('Data Tables')])->name('datatable');
     });
+
+    Route::group(['prefix' => 'examples', 'as' => 'examples.'], function(){
+        Route::view('blank', 'examples.blank', ['title' => __('Blank Page')])->name('blank');
+        Route::view('starter', 'examples.starter', ['title' => __('Starter Page')])->name('starter');
+    });
 });
