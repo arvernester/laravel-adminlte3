@@ -12,6 +12,9 @@
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="{{ asset('plugins/font-awesome/css/font-awesome.min.css') }}">
+  
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('css/adminlte.min.css') }}">
@@ -33,10 +36,10 @@
           </a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-          <a href="index3.html" class="nav-link">Home</a>
+          <a href="{{ route('dashboard') }}" class="nav-link">{{ __('Home') }}</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-          <a href="#" class="nav-link">Contact</a>
+          <a href="{{ route('profile') }}" class="nav-link">{{ __('Profile') }}</a>
         </li>
       </ul>
 
@@ -161,7 +164,7 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
       <a href="{{ route('dashboard') }}" class="brand-link">
-        <img src="{{ asset('img/AdminLTELogo.png') }}" alt="{{ config('app.name') }}" class="brand-image img-circle elevation-3" style="opacity: .8">
+        {{-- <img src="{{ asset('img/AdminLTELogo.png') }}" alt="{{ config('app.name') }}" class="brand-image img-circle elevation-3" style="opacity: .8"> --}}
         <span class="brand-text font-weight-light">{{ config('app.name') }}</span>
       </a>
 
@@ -319,6 +322,35 @@
                 <i class="nav-icon fa fa-calendar"></i>
                 <p>{{ __('Calendar') }} <span class="badge badge-info right">2</span></p>                
               </a>
+            </li>
+            <li class="nav-item has-treeview {{ request()->routeIs('mails.*') ? 'menu-open' : '' }}">
+              <a href="#" class="nav-link {{ request()->routeIs('mails.*') ? 'active' : '' }}">
+                <i class="nav-icon fa fa-envelope-o"></i>
+                <p>
+                  {{ __('Mailbox') }}
+                  <i class="right fa fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{ route('mails.inbox') }}" class="nav-link {{ request()->routeIs('mails.inbox') ? 'active' : '' }}">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>{{ __('Inbox') }}</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ route('mails.compose') }}" class="nav-link {{ request()->routeIs('mails.compose') ? 'active' : '' }}">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>{{ __('Compose') }}</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ route('mails.read') }}" class="nav-link {{ request()->routeIs('mails.read') ? 'active' : '' }}">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>{{ __('Read') }}</p>
+                  </a>
+                </li>
+              </ul>
             </li>
             <li class="nav-item has-treeview {{ request()->routeIs('pages.*') ? 'menu-open' : '' }}">
               <a href="#" class="nav-link {{ request()->routeIs('pages.*') ? 'active' : '' }}">

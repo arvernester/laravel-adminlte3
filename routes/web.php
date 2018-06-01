@@ -27,6 +27,12 @@ Route::group(['middleware' => 'auth'], function(){
     Route::view('profile', 'profile', ['title' => __('Profile')])->name('profile');
     Route::view('calendar', 'calendar', ['title' => __('Calendar')])->name('calendar');
 
+    Route::group(['prefix' => 'mails', 'as' => 'mails.'], function(){
+        Route::view('inbox', 'mails.inbox', ['title' => __('Inbox')])->name('inbox');
+        Route::view('compose', 'mails.compose', ['title' => __('Compose')])->name('compose');
+        Route::view('read', 'mails.read', ['title' => __('Read')])->name('read');
+    });
+
     Route::group(['prefix' => 'charts', 'as' => 'charts.'], function(){
         Route::view('chartjs', 'charts.chartjs', ['title' => 'ChartJS'])->name('chartjs');
         Route::view('flot', 'charts.flot', ['title' => 'Flot'])->name('flot');
