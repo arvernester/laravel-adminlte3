@@ -16,6 +16,9 @@ Route::redirect('/', '/dashboard');
 Auth::routes();
 Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 
+Route::get('social/{driver}', 'Auth\SocialController@redirect')->name('social.redirect');
+Route::get('social/{driver}/callback', 'Auth\SocialController@handle')->name('social.callback');
+
 Route::redirect('/home', '/dashboard')->name('home');
 
 Route::group(['middleware' => 'auth'], function(){

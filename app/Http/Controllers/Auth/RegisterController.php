@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\DB;
+use App\UserSocial;
 
 class RegisterController extends Controller
 {
@@ -63,10 +65,28 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+        DB::transaction(function() use(&$user, $data){
+            $user = User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+            ]);
+
+            if (session()->has('user.social')) {
+                $userSocial = UserSocial::firstOrNew([
+                    'driver_name' => session('user.social.driver'),
+                    'user_id' => $user->id, 
+                ])
+                ->fill([
+                    'driver_id' => session('user.social.id'),
+                    'name' => session('user.social.name'),
+                    'photo' => session('user.social.photo'),
+                ]);
+
+                $userSocial->save();
+            }
+        });
+
+        return $user;
     }
 }

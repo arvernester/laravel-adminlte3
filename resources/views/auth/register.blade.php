@@ -22,7 +22,7 @@
         @csrf
 
         <div class="form-group has-feedback">
-          <input name="name" type="text" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" value="{{ old('name') }}"
+          <input name="name" type="text" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" value="{{ old('name', session('user.social.name')) }}"
             placeholder="{{ __('Full name') }}" autofocus>
           <div class="invalid-feedback">{{ $errors->first('name') }}</div>
         </div>

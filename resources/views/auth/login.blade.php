@@ -16,6 +16,12 @@
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
+      @if (session('error'))
+        <div class="alert alert-danger">
+          {{ session('error') }}
+        </div>
+      @endif
+      
       <div class="alert alert-info">
         {{ __('Please register or login to access dashboard page.') }}
       </div>
@@ -52,7 +58,7 @@
 
       <div class="social-auth-links text-center mb-3">
         <p>- {{ __('OR') }} -</p>
-        <a href="#" class="btn btn-block btn-primary {{ !config('services.facebook.client_id') ? 'disabled' : '' }}">
+        <a href="{{ route('social.redirect', 'facebook') }}" class="btn btn-block btn-primary {{ !config('services.facebook.client_id') ? 'disabled' : '' }}">
           <i class="fa fa-facebook mr-2"></i> {{ __('Log in using Facebook') }}
         </a>
         <a href="#" class="btn btn-block btn-danger {{ !config('services.google.client_id') ? 'disabled' : '' }}"">

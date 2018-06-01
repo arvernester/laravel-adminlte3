@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class User extends Authenticatable
 {
@@ -34,5 +35,10 @@ class User extends Authenticatable
     public function getGravatarAttribute(): string
     {
         return 'https://www.gravatar.com/avatar/'.md5($this->attributes['email']);
+    }
+
+    public function socials(): HasMany
+    {
+        return $this->hasMany(UserSocial::class);
     }
 }
