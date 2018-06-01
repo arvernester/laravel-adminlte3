@@ -248,10 +248,6 @@
       </div>
 @endsection
 
-@push('css')
-<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-@endpush
-
 @push('js')
 <script src="{{ asset('plugins/chart.js/Chart.min.js') }}"></script>
 <script src="{{ asset('js/pages/dashboard3.js') }}"></script>

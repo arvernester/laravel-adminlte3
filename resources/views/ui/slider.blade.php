@@ -116,7 +116,6 @@
 @endsection
 
 @push('css')
-<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 <link rel="stylesheet" href="{{ asset('plugins/ionslider/ion.rangeSlider.css') }}">
 <link rel="stylesheet" href="{{ asset('plugins/ionslider/ion.rangeSlider.skinNice.css') }}">
 <link rel="stylesheet" href="{{ asset('plugins/bootstrap-slider/slider.css') }}"> @endpush @push('js')

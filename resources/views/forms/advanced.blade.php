@@ -381,7 +381,6 @@
 @endsection
 
 @push('css')
-<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker-bs3.css') }}">
 <link rel="stylesheet" href="{{ asset('plugins/iCheck/all.css') }}">
 <link rel="stylesheet" href="{{ asset('plugins/colorpicker/bootstrap-colorpicker.min.css') }}">
