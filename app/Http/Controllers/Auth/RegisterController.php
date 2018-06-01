@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\DB;
 use App\UserSocial;
+use Illuminate\Http\Request;
+use App\Notifications\User\RegisterNotification;
 
 class RegisterController extends Controller
 {
@@ -88,5 +90,10 @@ class RegisterController extends Controller
         });
 
         return $user;
+    }
+
+    public function registered(Request $request, User $user): void
+    {
+        $user->notify(new RegisterNotification);
     }
 }

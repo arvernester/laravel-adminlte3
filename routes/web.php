@@ -22,6 +22,8 @@ Route::get('social/{driver}/callback', 'Auth\SocialController@handle')->name('so
 Route::redirect('/home', '/dashboard')->name('home');
 
 Route::group(['middleware' => 'auth'], function(){
+    Route::get('notification/{id}', 'NotificationController@redirect')->name('notification.redirect');
+    
     Route::get('dashboard', 'DashboardController')->name('dashboard');
     Route::view('widget', 'widget', ['title' => __('Widgets')])->name('widget');
     Route::view('profile', 'profile', ['title' => __('Profile')])->name('profile');
