@@ -12,7 +12,7 @@
             <img class="profile-user-img img-fluid img-circle" src="{{ auth()->user()->gravatar }}" alt="{{ auth()->user()->name }}">
           </div>
 
-          <h3 class="profile-username text-center">Nina Mcintire</h3>
+          <h3 class="profile-username text-center">{{ auth()->user()->name }}</h3>
 
           <p class="text-muted text-center">Software Engineer</p>
 
