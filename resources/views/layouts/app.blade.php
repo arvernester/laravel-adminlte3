@@ -89,7 +89,8 @@
             </a>
             <div class="dropdown-divider"></div>
             @endforeach
-            <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+
+            <a href="{{ route('profile') }}" class="dropdown-item dropdown-footer">{{ __('See all notifications') }}</a>
           </div>
         </li>
         <!-- Notifications Dropdown Menu -->
