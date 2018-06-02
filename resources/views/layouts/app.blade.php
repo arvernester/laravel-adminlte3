@@ -164,7 +164,10 @@
             <li class="nav-item">
               <a href="{{ route('widget') }}" class="nav-link {{ request()->routeIs('widget') ? 'active' : '' }}">
                 <i class="nav-icon fa fa-th"></i>
-                <p>{{ __('Widgets') }}</p>
+                <p>
+                  {{ __('Widgets') }}
+                  <span class="right badge badge-danger">{{ __('New') }}</span>
+                </p>
               </a>
             </li>
             <li class="nav-item has-treeview {{ request()->routeIs('charts.*') ? 'menu-open' : '' }}">
