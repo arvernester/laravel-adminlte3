@@ -93,12 +93,12 @@
 
 @push('css')
 <link rel="stylesheet" href="{{ asset('plugins/fullcalendar/fullcalendar.min.css') }}">
-<link rel="stylesheet" href="{{ asset('plugins/fullcalendar/fullcalendar.print.css') }}">
+<link rel="stylesheet" href="{{ asset('plugins/fullcalendar/fullcalendar.print.css') }}" media="print">
 @endpush
 
 @push('js')
-<script src="{{ asset('https://code.jquery.com/ui/1.11.4/jquery-ui.min.js') }}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
+<script src="{{ asset('//code.jquery.com/ui/1.11.4/jquery-ui.min.js') }}"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
 <script src="{{ asset('plugins/fullcalendar/fullcalendar.min.js') }}"></script>
 <script>
   $(function() {
