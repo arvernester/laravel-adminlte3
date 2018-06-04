@@ -58,6 +58,7 @@
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
         <!-- Messages Dropdown Menu -->
+        @auth
         <li class="nav-item dropdown">
           <a class="nav-link" data-toggle="dropdown" href="#">
             <i class="fa fa-comments-o"></i>
@@ -93,6 +94,7 @@
             <a href="{{ route('profile') }}" class="dropdown-item dropdown-footer">{{ __('See all notifications') }}</a>
           </div>
         </li>
+        @endauth
         <!-- Notifications Dropdown Menu -->
         <li class="nav-item dropdown">
           <a class="nav-link" data-toggle="dropdown" href="#">
