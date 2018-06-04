@@ -12,23 +12,39 @@ use App\User;
 
 class SocialController extends Controller
 {
+    /**
+     * Redirect page to social media account permission.
+     *
+     * @param Request $request
+     * @param string $driver
+     * @return void
+     */
     public function redirect(Request $request, string $driver)
     {
-        $socials = [
-            'facebook',
-            'google',
-        ];
+        $service = config('services.'.$driver);
 
-        if (!in_array($driver, $socials)) {
-            return redirect('login');
+        if (is_null($service)) {
+            return redirect()
+                ->route('login')
+                ->withError(__('Social media driver is not available.'));
         }
 
         return Socialite::driver($driver)->redirect();
     }
 
+    /**
+     * Handle data from social media.
+     * 1. Register if user and/or email is not exists.
+     * 2. Login with existing user if email addres found in database.
+     *
+     * @param Request $request
+     * @param string $driver
+     * @return void
+     */
     public function handle(Request $request, string $driver)
     {
         if ($request->has('error')) {
+            // user rejected app permission
             return redirect()
                 ->route('login')
                 ->withError(__('Permission has been canceled.'));
@@ -36,6 +52,7 @@ class SocialController extends Controller
 
         $social = Socialite::driver($driver)->user();
 
+        // check if user provider is already exists
         $socliate = UserSocial::whereDriverName($driver)
             ->whereDriverId(sha1($social->getId()))
             ->with('user')
@@ -49,6 +66,7 @@ class SocialController extends Controller
         }
 
         if (is_null($social->getEmail())) {
+            // redirect to register form and user must fill email and password manually
             session()->put('user.social', [
                 'driver' => $driver,
                 'id' => $social->getId(),
