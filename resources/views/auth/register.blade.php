@@ -61,11 +61,11 @@
 
       <div class="social-auth-links text-center">
         <p>- {{ __('OR') }} -</p>
-        <a href="#" class="btn btn-block btn-primary {{ !config('services.facebook.client_id') ? 'disabled' : '' }}"">
+        <a href="{{ route('social.redirect', 'facebook') }}" class="btn btn-block btn-primary {{ !config('services.facebook.client_id') ? 'disabled' : '' }}"">
           <i class="fa fa-facebook mr-2"></i>
           {{ __('Register using Facebook') }}
         </a>
-        <a href="#" class="btn btn-block btn-danger {{ !config('services.google.client_id') ? 'disabled' : '' }}"">
+        <a href="{{ route('social.redirect', 'google') }}" class="btn btn-block btn-danger {{ !config('services.google.client_id') ? 'disabled' : '' }}"">
           <i class="fa fa-google-plus mr-2"></i>
           {{ __('Register using Google+') }}
         </a>
