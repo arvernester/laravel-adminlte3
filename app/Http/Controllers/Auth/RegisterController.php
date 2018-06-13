@@ -67,7 +67,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        DB::transaction(function() use(&$user, $data){
+        DB::transaction(function () use (&$user, $data) {
             $user = User::create([
                 'name' => $data['name'],
                 'email' => $data['email'],
@@ -77,7 +77,7 @@ class RegisterController extends Controller
             if (session()->has('user.social')) {
                 $userSocial = UserSocial::firstOrNew([
                     'driver_name' => session('user.social.driver'),
-                    'user_id' => $user->id, 
+                    'user_id' => $user->id,
                 ])
                 ->fill([
                     'driver_id' => session('user.social.id'),

@@ -71,7 +71,7 @@ class SocialController extends Controller
                 'driver' => $driver,
                 'id' => $social->getId(),
                 'name' => $social->getName(),
-                'photo' => $social->getAvatar(), 
+                'photo' => $social->getAvatar(),
             ]);
             
             return redirect()->route('register');
@@ -92,9 +92,8 @@ class SocialController extends Controller
             ]);
 
             $userSocial->save();
-        }
-        else {
-            DB::transaction(function() use(&$user, $driver, $social){
+        } else {
+            DB::transaction(function () use (&$user, $driver, $social) {
                 $user = User::create([
                     'name' => $social->getName(),
                     'email' => $social->getEmail(),
