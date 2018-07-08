@@ -10,7 +10,7 @@
       $first = config('app.name'); } 
     @endphp
     <a href="{{ url()->current() }}">
-      <b>{{ $first }}</b>{{ $last }}
+      <b>{{ $first }}</b>{{ $last ?? null }}
     </a>
   </div>
 
