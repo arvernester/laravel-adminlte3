@@ -63,7 +63,7 @@ class RegisterNotification extends Notification
     {
         return [
             'type' => 'success',
-            'title' => 'Welcome Abroad!',
+            'title' => __('Welcome Aboard!'),
             'text' => __('Thank you for registering at :app', ['app' => config('app.name')]),
             'url' => route('dashboard'),
             'image' => $notifiable->gravatar,
