@@ -38,9 +38,18 @@
         <li class="nav-item d-none d-sm-inline-block">
           <a href="{{ route('dashboard') }}" class="nav-link">{{ __('Home') }}</a>
         </li>
-        <li class="nav-item d-none d-sm-inline-block">
-          <a href="{{ route('profile') }}" class="nav-link">{{ __('Profile') }}</a>
-        </li>
+        @auth
+          <li class="nav-item d-none d-sm-inline-block">
+            <a href="{{ route('profile') }}" class="nav-link">{{ __('Profile') }}</a>
+          </li>
+        @else
+          <li class="nav-item d-none d-sm-inline-block">
+            <a href="{{ route('login') }}" class="nav-link">{{ __('Login') }}</a>
+          </li>
+          <li class="nav-item d-none d-sm-inline-block">
+            <a href="{{ route('register') }}" class="nav-link">{{ __('Register') }}</a>
+          </li>
+        @endif
       </ul>
 
       <!-- SEARCH FORM -->
@@ -94,7 +103,7 @@
             <a href="{{ route('profile') }}" class="dropdown-item dropdown-footer">{{ __('See all notifications') }}</a>
           </div>
         </li>
-        @endauth
+
         <!-- Notifications Dropdown Menu -->
         <li class="nav-item dropdown">
           <a class="nav-link" data-toggle="dropdown" href="#">
@@ -122,6 +131,8 @@
             <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
           </div>
         </li>
+        @endauth
+
         <li class="nav-item">
           <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#">
             <i class="fa fa-th-large"></i>
@@ -142,6 +153,7 @@
       <!-- Sidebar -->
       <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
+        @auth
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="image">
             <img src="{{ optional(auth()->user())->gravatar ?? 'http://via.placeholder.com/128x128' }}" class="img-circle elevation-2"
@@ -149,14 +161,16 @@
           </div>
           <div class="info">
             <a href="{{ route('profile') }}" class="d-block">
-              {{ optional(auth()->user())->name ?? __('Guest') }}
+              {{ optional(auth()->user())->name }}
             </a>
           </div>
         </div>
+        @endauth
 
         <!-- Sidebar Menu -->
         <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            @auth
             <li class="nav-item">
               <a href="{{ route('dashboard') }}" class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}">
                 <i class="nav-icon fa fa-dashboard"></i>
@@ -369,7 +383,7 @@
                       <i class="nav-icon fa fa-circle-o nav-icon"></i>
                       <p>{{ __('Blank Page') }}</p>
                     </a>
-                  </li>            
+                  </li>                   
                   <li class="nav-item">
                     <a href="{{ route('examples.starter') }}" class="nav-link {{ request()->routeIs('examples.starter') ? 'active' : '' }}">
                       <i class="nav-icon fa fa-circle-o nav-icon"></i>
@@ -385,6 +399,14 @@
                 <p>{{ __('Logout') }}</p>
               </a>
             </li>
+            @else
+              <li class="nav-item">
+                <a href="{{ route('guest') }}" class="nav-link {{ request()->routeIs('guest') ? 'active' : '' }}">
+                  <i class="nav-icon fa fa-plus-square-o"></i>
+                  <p>{{ __('Guest Page') }}</p>
+                </a>
+              </li>
+            @endauth
           </ul>
         </nav>
         <!-- /.sidebar-menu -->

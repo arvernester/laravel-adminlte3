@@ -20,6 +20,7 @@ Route::get('social/{driver}', 'Auth\SocialController@redirect')->name('social.re
 Route::get('social/{driver}/callback', 'Auth\SocialController@handle')->name('social.callback');
 
 Route::redirect('/home', '/dashboard')->name('home');
+Route::view('guest', 'guest', ['title' => __('Guest Page')])->name('guest');
 
 Route::group(['middleware' => 'auth'], function(){
     Route::get('notification/{id}', 'NotificationController@redirect')->name('notification.redirect');
