@@ -35,7 +35,7 @@ return [
         \BeyondCode\SelfDiagnosis\Checks\Production\RoutesAreCached::class,
         \BeyondCode\SelfDiagnosis\Checks\Production\XDebugIsNotEnabled::class,
         \BeyondCode\SelfDiagnosis\Checks\Production\DebugModeIsNotEnabled::class,
-        \App\Checks\ProtocolIsSecure::class,
+        // \App\Checks\ProtocolIsSecure::class,
     ],
 
     /*
