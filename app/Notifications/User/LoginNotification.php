@@ -63,8 +63,8 @@ class LoginNotification extends Notification
     {
         return [
             'type' => 'info',
-            'title' => 'Login',
-            'text' => 'Welcome to dashboard!',
+            'title' => __('Login'),
+            'text' => __('Welcome to dashboard!'),
             'url' => route('dashboard'),
             'image' => $notifiable->gravatar,
         ];
