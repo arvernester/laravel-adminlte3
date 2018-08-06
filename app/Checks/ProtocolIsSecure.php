@@ -23,7 +23,7 @@ class ProtocolIsSecure implements Check
      */
     public function check(): bool
     {
-        return str_contains('https', env('APP_URL'));
+        return str_contains('https', config('app.url'));
     }
 
     /**
